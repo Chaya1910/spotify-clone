@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'Mukta', sans-serif
+}
+
+:root{
+    --color-primary-bg: black;
+    --color-secondary-bg: rgb(61, 59, 59);
+    --color-primary-text: white;
+    --color-secondary-text: rgb(173, 171, 171);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.sidebar{
+    height: 100vh;
+    width: 20vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--color-primary-bg);
+    color: var(--color-secondary-text);
+}
+
+.sidebar a{
+    color: var(--color-secondary-text);
+}
+
+.sidebar ul{
+    padding: 2rem 1rem 0 1rem;
+}
+
+.sidebar ul li{
+    padding: 0.5rem 0 0 0;
+}
+
+.sidebar ul li span{
+    padding-left: 0.5rem;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a:focus,
+.sidebar ul li a:active
+{
+    color: var(--color-primary-text);
+    font-weight: 700;
+
+}
+
+.sidebar ul li a:hover .fa,
+.sidebar ul li a:focus .fa,
+.sidebar ul li a:active .fa
+{
+    color: var(--color-secondary-text);
+    font-weight: 700;
+
+}
+
+.sidebar ul li a:hover .fa:hover,
+.sidebar ul li a:focus .fa:hover,
+.sidebar ul li a:active .fa:hover
+{
+    color: var(--color-primary-text);
+    font-weight: 700;
+
+}
+
+.logo{
+    padding: 0.5rem 0 0 1rem;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.logo span{
+    color: var(--color-primary-text);
+}
+
+.special-menu{
+    font-weight: 600;
+
+}
+
+.privacy-menu{
+    position: absolute;
+    bottom: 6rem;
+    font-size: 0.9rem;
+    font-weight: lighter;
+}
+
+
+
