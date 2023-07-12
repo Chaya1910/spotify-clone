@@ -13,7 +13,8 @@
 
 :root{
     --color-primary-bg: black;
-    --color-secondary-bg: rgb(61, 59, 59);
+    --color-secondary-bg: rgb(19, 18, 18);
+    --color-ternary-bg: rgb(67, 65, 65);
     --color-primary-text: white;
     --color-secondary-text: rgb(173, 171, 171);
 }
@@ -24,13 +25,17 @@ html{
 
 .container {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
+    position: relative;
 }
+
+
+/* Sidebar */
 
 .sidebar{
     height: 100vh;
-    width: 20vw;
+    width: 25vw;
     position: fixed;
     left: 0;
     top: 0;
@@ -103,6 +108,66 @@ html{
     font-size: 0.9rem;
     font-weight: lighter;
 }
+
+
+/* Main content */
+
+.main{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--color-ternary-bg);
+    display: flex;
+    flex-direction: row;    
+}
+
+.navbar{
+    background-color: var(--color-secondary-bg);
+    height: 8vh;
+    position: fixed;
+    left: 25vw;
+    width: 75vw;    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.8rem 2rem;
+}
+
+.navigation-btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-btns .btns{
+    background-color: transparent;
+    color: var(--color-secondary-text);
+    font-size: 1.5rem;
+    padding: 0 0.8rem;
+}
+
+.navbar .nav-menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.navbar .nav-menu ul li{
+    display: inline-block;
+}
+
+.sign-up{
+    color: var(--color-secondary-text);
+    font-size: 1rem;
+    padding-right: 2rem;
+}
+
+.login-btn{
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.5rem;
+    font-weight: 900;
+}
+
+
 
 
 
