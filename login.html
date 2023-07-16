@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Spotify</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/82c581feec.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-navbar">
+        <a href="index.html">
+          <i class="fa-brands fa-spotify" style="color: #ffffff"></i>
+          <span>Spotify</span>
+        </a>
+      </div>
+
+      <div class="login-main">
+        <div class="login-box">
+          <h1 class="login-header">Log in to spotify</h1>
+          <div class="social-app">
+            <ul>
+              <li>
+                <button type="button" class="login-btns">
+                  <span
+                    ><img src="img/google.png" alt="google logo"
+                  /></span>
+                  <span>Continue With Google</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="login-btns">
+                  <span
+                    ><img
+    
+                      src="img/facebook.png"
+                      alt="facebook logo"
+                  /></span>
+                  <span>Continue With Facebook</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="login-btns">
+                  <span
+                    ><img style="color:white;" src="img/apple.png" alt="apple logo"
+                  /></span>
+                  <span>Continue With Apple</span>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="login-btns">
+                  <span>Continue With Phone number</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <hr/>
+          <div class="email-username-box">
+            <ul>
+              <li>
+                <label for="email">Email or username</label>
+                <input class="email" type="text" name="email" id="email" placeholder="Email or username"/>
+              </li>
+              <li>
+                <label for="password">Password</label>
+                <input class="password" type="password" name="password" id="password" placeholder="Password" />
+              </li>
+              <li>
+                <button class="login-login-btn">Log in</button>
+              </li>
+              <li class="forgot-password-li"><a class="forgot-password" href="#">Forgot your password?</a></li>
+            </ul>
+          </div>
+          <hr>
+          <p class="last-heading">Don't have an account? <a href="index.html"> Sign up for Spotify.</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
