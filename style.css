@@ -8,166 +8,612 @@
   border: none;
   list-style-type: none;
   text-decoration: none;
-  font-family: 'Mukta', sans-serif
+  font-family: 'Mukta', sans-serif;
 }
 
-:root{
-    --color-primary-bg: black;
-    --color-secondary-bg: rgb(19, 18, 18);
-    --color-ternary-bg: rgb(67, 65, 65);
-    --color-primary-text: white;
-    --color-secondary-text: rgb(173, 171, 171);
+
+
+:root {
+  --color-primary-bg: black;
+  --color-secondary-bg: rgb(19, 18, 18);
+  --color-ternary-bg: rgb(29, 29, 29);
+  --color-primary-text: white;
+  --color-secondary-text: rgb(173, 171, 171);
+  --color-spotify-green: rgb(29, 145, 29);
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: var(--color-primary-bg);
 }
 
 .container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid rgb(212, 10, 10); */
+  background-color: rgb(31, 30, 30);
 }
-
 
 /* Sidebar */
 
-.sidebar{
-    height: 100vh;
-    width: 25vw;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    background-color: var(--color-primary-bg);
-    color: var(--color-secondary-text);
+.sidebar {
+  height: 100%;
+  width: 25%;
+  background-color: var(--color-primary-bg);
+  color: var(--color-secondary-text);
+  position: fixed;
+  /* border: 1px solid rgb(192, 25, 172); */
 }
 
-.sidebar a{
-    color: var(--color-secondary-text);
+.sidebar a {
+  color: var(--color-secondary-text);
 }
 
-.sidebar ul{
-    padding: 2rem 1rem 0 1rem;
+.sidebar ul {
+  padding: 2rem 1rem 0 1rem;
 }
 
-.sidebar ul li{
-    padding: 0.5rem 0 0 0;
+.sidebar ul li {
+  padding: 0.5rem 0 0 0;
 }
 
-.sidebar ul li span{
-    padding-left: 0.5rem;
+.sidebar ul li span {
+  padding-left: 0.5rem;
 }
 
 .sidebar ul li a:hover,
 .sidebar ul li a:focus,
-.sidebar ul li a:active
-{
-    color: var(--color-primary-text);
-    font-weight: 700;
-
+.sidebar ul li a:active {
+  color: var(--color-primary-text);
+  font-weight: 700;
 }
 
 .sidebar ul li a:hover .fa,
 .sidebar ul li a:focus .fa,
-.sidebar ul li a:active .fa
-{
-    color: var(--color-secondary-text);
-    font-weight: 700;
-
+.sidebar ul li a:active .fa {
+  color: var(--color-secondary-text);
+  font-weight: 700;
 }
 
 .sidebar ul li a:hover .fa:hover,
 .sidebar ul li a:focus .fa:hover,
-.sidebar ul li a:active .fa:hover
-{
+.sidebar ul li a:active .fa:hover {
+  color: var(--color-primary-text);
+  font-weight: 700;
+}
+
+.logo {
+  padding: 0.5rem 0 0 1rem;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.logo span {
+  color: var(--color-primary-text);
+}
+
+.special-menu {
+  font-weight: 600;
+}
+
+.privacy-menu {
+  position: absolute;
+  top: 20rem;
+  font-size: 0.9rem;
+  font-weight: lighter;
+}
+
+/* Home page - Main content */
+
+.main {
+  height: 90%;
+  width: 75%;
+  background-color: rgb(22, 23, 23);
+  display: flex;
+  flex-direction: column;
+  margin-left: 25%;
+  /* border: 1px solid yellow; */
+}
+
+/* Navbar */
+
+.navbar {
+  background-color: var(--color-secondary-bg);
+  height: 5%;
+  width: 75%;
+  position: fixed;
+  left: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem 2rem;
+  z-index: 100;
+}
+
+.navigation-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-btns .btns {
+  background-color: transparent;
+  color: var(--color-secondary-text);
+  font-size: 1.5rem;
+  padding: 0 0.8rem;
+  cursor: pointer;
+}
+
+.navbar .nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.navbar .nav-menu ul li {
+  display: inline-block;
+}
+
+.sign-up {
+  color: var(--color-secondary-text);
+  font-size: 1rem;
+  padding-right: 2rem;
+}
+
+.login-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+
+.albums {
+  margin-top: 7%;
+  width: 100%;
+}
+
+.songs-album {
+  width: 100%;
+  margin-bottom: 20px;
+
+  /* border: 1px solid rgb(225, 222, 222); */
+}
+
+.album-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.album-header h4{
     color: var(--color-primary-text);
-    font-weight: 700;
-
+    font-size: 18px;
+    font-weight: 800;
+    padding-left: 20px;
 }
 
-.logo{
-    padding: 0.5rem 0 0 1rem;
-    font-size: x-large;
-    font-weight: 600;
+.see-all-btns{
+  padding-right: 10px;
 }
 
-.logo span{
-    color: var(--color-primary-text);
+.album-header .see-all-btns .fa {
+  cursor: pointer;
+  padding: 0 5px;
 }
 
-.special-menu{
-    font-weight: 600;
-
-}
-
-.privacy-menu{
-    position: absolute;
-    bottom: 6rem;
-    font-size: 0.9rem;
-    font-weight: lighter;
+.album-header .see-all-btns .fa:hover {
+  cursor: pointer;
+  color: black;
 }
 
 
-/* Main content */
+.song-list{
+    display: flex;
+    width: 100%;
+  display: flex;
+  /* border: 1px solid green; */
+  overflow: auto;
+  scroll-behavior: smooth;
+}
 
-.main{
-    height: 100vh;
-    width: 100vw;
+.song-item{
+    height: 280px;
+    min-width: 210px;
+    padding: 10px;
+    margin: 0 5px;
+    transition: 0.3s linear;
+    border-radius: 5px;
     background-color: var(--color-ternary-bg);
-    display: flex;
-    flex-direction: row;    
 }
 
-.navbar{
-    background-color: var(--color-secondary-bg);
-    height: 8vh;
-    position: fixed;
-    left: 25vw;
-    width: 75vw;    
+.song-list .song-item img{
+  margin-top: 10px;
+    width: 90%;
+    height: 100%;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1.8rem 2rem;
+    justify-content: center;
 }
 
-.navigation-btns{
+.song-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* .song-item {
+  height: 250px;
+  width: 300px;
+  padding: 10px;
+  margin: 0 5px;
+  transition: 0.3s linear;
+  border-radius: 5px;
+  background-color: rgb(21, 21, 21);
+} */
+
+.song-item:hover {
+  background-color: rgb(46, 46, 48);
+}
+
+.song-item-img {
+  width: 100%;
+  height: 70%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.song-item-img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 6px;
+}
+
+.song-item-img .img-play-btn {
+  cursor: pointer;
+  font-size: 25px;
+  position: absolute;
+  transition: 0.3s linear;
+  opacity: 0;
+}
+
+.song-item:hover .img-play-btn {
+  opacity: 1;
+}
+
+.song-item h5 {
+  color: var(--color-primary-text);
+  padding: 7px 2px 0 5px;
+  margin-left: 6px;
+  line-height: 15px;
+  font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.song-item .singer {
+  padding: 5px 2px 0 5px;
+  margin-left: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-secondary-text);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Album box 
+
+.album-box{
+    color: var(--color-primary-text);
+    width: 100%;
+    height: 85%;
+    margin-top: 2%;
+    background-color: rgb(139, 213, 213);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-header{
+    color: var(--color-primary-text);
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
-.navigation-btns .btns{
-    background-color: transparent;
-    color: var(--color-secondary-text);
-    font-size: 1.5rem;
-    padding: 0 0.8rem;
-}
-
-.navbar .nav-menu{
+.list{
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: max-content;
+    border: 2px solid green;
+}
+
+.item{
+    background-color: var(--color-ternary-bg);
+    padding: 1rem;
+    flex: 4;
+    margin: 5px;
+    border: 2px solid green;
+
+}
+
+.list img{
+    width: 150px;
+    height: 150px;
+    border: 2px solid green;
+
+}
+
+.item p{
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 2px solid green;
+    font-size: small;
+
+}
+
+*/
+
+
+ /* music player */
+.master-play{
+    width: 100%;
+    height: 15%;
+    background-color: var(--color-ternary-bg);
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
 }
 
-.navbar .nav-menu ul li{
-    display: inline-block;
+.play-song-box{
+  /* border: 1px solid pink; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
 }
 
-.sign-up{
-    color: var(--color-secondary-text);
-    font-size: 1rem;
-    padding-right: 2rem;
+.play-song-box img{
+  width: 50px;
+  height: 50px;
+  /* border: 1px solid yellow; */
 }
 
-.login-btn{
-    padding: 0.5rem 1.5rem;
-    border-radius: 1.5rem;
-    font-weight: 900;
+.play-song-box h5{
+  font-size: 10px;
+  width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.play-box{
+  /* border: 1px solid black; */
+  height: 50px;
+  width:150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.play-box .fa-solid{
+  cursor: pointer;
+
+}
+
+/* .play-box .pause{
+  display: none;
+} */
+
+.show{
+  display: flex;
+
+}
+
+.hide{
+  display: none;
 }
 
 
 
 
+/* Preview bar - footer */
 
+.preview-bar {
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(to right, #d23eff, rgb(82, 173, 242));
+  padding: 0.6rem 2rem;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-primary-text);
+}
+
+.preview-bar .text h6 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.preview-bar .text p {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.preview-bar .sign-up-btn {
+  padding: 0.5rem 2rem;
+  border-radius: 5rem;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  background-color: #fff;
+  margin-left: 300px;
+}
+
+.close-preview{
+    margin-left: 50px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+/* Login page  */
+.login-navbar {
+  background-color: var(--color-primary-bg);
+  height: 18vh;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.login-navbar a {
+  font-size: 1.8rem;
+  color: var(--color-primary-text);
+  font-weight: 600;
+}
+
+.login-main {
+  background-color: var(--color-secondary-bg);
+  display: flex;
+  justify-content: center;
+}
+
+.login-box {
+  background-color: var(--color-primary-bg);
+  width: 60vw;
+  padding: 3rem 5rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-header {
+  color: var(--color-primary-text);
+  padding-bottom: 1.5rem;
+}
+
+.login-btns {
+  background-color: var(--color-primary-bg);
+  padding: 0.5rem;
+  margin: 0.5rem;
+  margin-left: 1rem;
+  border: 0.05px solid var(--color-secondary-text);
+  border-radius: 30px;
+  width: 24vw;
+  color: var(--color-primary-text);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login-btns:hover {
+  border-color: var(--color-primary-text);
+}
+
+.login-btns img {
+  width: 18px;
+  height: 18px;
+}
+
+hr {
+  width: 40vw;
+  margin: 2.5rem 0;
+  border: 0.5px solid rgb(59, 59, 59);
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  color: var(--color-secondary-text);
+}
+
+.email-username-box {
+  display: flex;
+  justify-content: center;
+  color: var(--color-primary-text);
+}
+
+.email-username-box label {
+  padding: 1rem o;
+  margin: 1rem;
+}
+
+.email-username-box input {
+  background-color: var(--color-secondary-bg);
+  padding: 0.5rem;
+  margin: 0.3rem 1rem 1rem 1rem;
+  border: 1px solid var(--color-secondary-text);
+  border-radius: 3px;
+  display: block;
+  width: 30vw;
+  color: var(--color-primary-text);
+}
+
+.email-username-box input:hover,
+.email-username-box input:focus {
+  border-color: var(--color-primary-text);
+}
+
+.login-login-btn {
+  width: 30vw;
+  background-color: rgb(73, 167, 73);
+  padding: 1rem 3rem;
+  margin: 1rem;
+  color: var(--color-primary-bg);
+  border-radius: 30px;
+}
+
+.forgot-password {
+  text-decoration: underline;
+  color: var(--color-primary-text);
+}
+
+.forgot-password:hover {
+  color: var(--color-spotify-green);
+}
+
+.forgot-password-li {
+  text-align: center;
+}
+
+.last-heading {
+  color: var(--color-secondary-text);
+}
+
+.last-heading a {
+  color: var(--color-primary-text);
+  text-decoration: underline;
+}
+
+.last-heading a:hover {
+  color: var(--color-spotify-green);
+}
+
+
+
+
+/* Sign up page */
