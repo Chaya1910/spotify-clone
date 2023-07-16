@@ -23,7 +23,7 @@
         <div class="menu">
           <ul>
             <li>
-              <a href="#">
+              <a href="index.html">
                 <span class="fa fa-home"></span>
                 <span class="menu-title">Home</span>
               </a>
@@ -69,28 +69,129 @@
             </li>
           </ul>
         </div>
+
+        <div class="master-play hide">
+          <div class="play-song-box">
+            <img id="play-song-img" src="img/kabira.jpg">
+            <h5 id="play-song-name">Kabira</h5>
+          </div>
+          <div class="play-box">
+            <span class="fa-solid fa-backward-step backward-step" style="color: #ffffff;"></span>
+            <span class="fa-solid fa-play play" style="color: #ffffff;"></span>
+            <span class=" fa-solid fa-forward-step forward-step" style="color: #ffffff;"></span>
+          </div>
+        </div>
       </div>
 
       <div class="main">
         <div class="navbar">
           <div class="navigation-btns">
-            <button type="button" class="fa fa-chevron-left left-arrow btns"></button>
-            <button type="button" class="fa fa-chevron-right right-arrow btns"></button>
+            <button
+              type="button"
+              class="fa fa-chevron-left left-arrow btns"
+            ></button>
+            <button
+              type="button"
+              class="fa fa-chevron-right right-arrow btns"
+            ></button>
           </div>
 
-          <div class="nav-menu"> 
+          <div class="nav-menu">
             <ul>
               <li>
-                <a href="#" class="sign-up">Sign up</a>            
+                <a href="signup.html" class="sign-up">Sign up</a>
               </li>
               <li>
-                <button type="button" class="login-btn">Log in</button>
+                <a href="login.html" class="login-btn">Log in</a>
               </li>
             </ul>
           </div>
         </div>
 
+        <div class="albums">
+          <!-- Album 1-->
+          <div class="songs-album album-1">
+            <div class="album-header">
+              <h4>Bollywood Butter</h4>
+              <div class="see-all-btns">
+                <span
+                  class="fa fa-arrow-left left-arrow"
+                  id="album1-left"
+                  style="color: #a8aaad"
+                ></span>
+                <span
+                  class="fa fa-arrow-right right-arrow"
+                  id="album1-right"
+                  style="color: #9fa0a3"
+                ></span>
+              </div>
+            </div>
+            <div class="song-list list1">
+              <!--Adding songs via js-->
+            </div>
+          </div>
+          <!-- Album 2-->
+          <div class="songs-album album-2">
+            <div class="album-header">
+              <h4>All Out 00's Hindi</h4>
+              <div class="see-all-btns">
+                <span
+                  class="fa fa-arrow-left left-arrow"
+                  style="color: #a8aaad"
+                ></span>
+                <span
+                  class="fa fa-arrow-right right-arrow"
+                  style="color: #9fa0a3"
+                ></span>
+              </div>
+            </div>
+            <div class="song-list list2">
+              <!--Adding songs via js-->
+            </div>
+          </div>
+
+          <!-- Album 3-->
+          <div class="songs-album album-3">
+            <div class="album-header">
+              <h4>All Out 00's Hindi</h4>
+              <div class="see-all-btns">
+                <span
+                  class="fa fa-arrow-left left-arrow"
+                  style="color: #a8aaad"
+                ></span>
+                <span
+                  class="fa fa-arrow-right right-arrow"
+                  style="color: #9fa0a3"
+                ></span>
+              </div>
+            </div>
+            <div class="song-list list3">
+              <!--Adding songs via js-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+
+      <div class="preview-bar">
+        <div class="text">
+          <h6>Preview of spotify</h6>
+          <p>
+            Sign up to get unlimited songs and podcasts with occasional ads. No
+            credit card needed.
+          </p>
+        </div>
+        <a href="signup.html" class="sign-up-btn">Sign up free</a>
+        <span
+          class="fa-solid fa-xmark close-preview"
+          id="close-preview-btn"
+          style="color: #000000"
+        ></span>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
