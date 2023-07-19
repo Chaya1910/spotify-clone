@@ -1,30 +1,10 @@
 let currentSongIndex;
 let first = true;
 let songIndex = 0;
+let songDuration;
+let progress;
 
-var audio = new Audio('audio/Kesariya.mp3');
-
-
-//Sliding songs in albums
-let leftArrows = document.querySelectorAll('.left-arrow');
-let rightArrows = document.querySelectorAll('.right-arrow');
-
-//Slide left
-leftArrows.forEach((left) => {
-  left.addEventListener('click', (e) => {
-    const list = e.currentTarget.parentElement.parentElement.nextElementSibling;
-    list.scrollLeft -= 900;
-  });
-});
-
-//Slide right
-rightArrows.forEach((left) => {
-  left.addEventListener('click', (e) => {
-    const list = e.currentTarget.parentElement.parentElement.nextElementSibling;
-    list.scrollLeft += 900;
-  });
-});
-
+// static data
 const songList = [
   {
     id: 0,
@@ -196,6 +176,30 @@ const songList = [
   },
 ];
 
+var audio = new Audio('audio/Kesariya.mp3');
+let durationBar = document.getElementById('duration-bar');
+
+//Sliding songs in albums
+let leftArrows = document.querySelectorAll('.left-arrow');
+let rightArrows = document.querySelectorAll('.right-arrow');
+
+//Slide left
+leftArrows.forEach((left) => {
+  left.addEventListener('click', (e) => {
+    const list = e.currentTarget.parentElement.parentElement.nextElementSibling;
+    list.scrollLeft -= 900;
+  });
+});
+
+//Slide right
+rightArrows.forEach((left) => {
+  left.addEventListener('click', (e) => {
+    const list = e.currentTarget.parentElement.parentElement.nextElementSibling;
+    list.scrollLeft += 900;
+  });
+});
+
+
 //Initial songs rendering
 let lists = document.querySelectorAll('.song-list');
 let listCount = 0;
@@ -221,10 +225,8 @@ function renderSongs(list) {
     list.innerHTML += str;
     j++;
     songIndex++;
-    console.log(songIndex);
   }
 }
-
 
 //closing preview bar
 const previewBar = document.querySelector('.preview-bar');
@@ -234,12 +236,22 @@ previewCloseBtn.addEventListener('click', () => {
   previewBar.style.display = 'none';
 });
 
-//Music play-pause
+// Initalize a new audio and get the duration
+function initializeAudio() {
+  audio = new Audio(songList[currentSongIndex].audioPath);
+
+  // Getting the song duration
+  audio.addEventListener('loadedmetadata', function () {
+    songDuration = audio.duration;
+    playMusic();
+  });
+}
+
+// Music play-pause
 const playBtn = document.querySelector('.play');
 
 // Play or Pause song from masterplay tab
 playBtn.addEventListener('click', () => {
-  console.log('play');
   if (audio.paused) {
     playMusic();
   } else {
@@ -252,6 +264,23 @@ function playMusic() {
   audio.play();
   playBtn.classList.remove('fa-play');
   playBtn.classList.add('fa-pause');
+
+  // Getting current time of audio and progress calculation
+  audio.addEventListener('timeupdate', () => {
+    progress = parseInt((audio.currentTime / songDuration) * 100);
+    durationBar.value = progress;
+  });
+
+  // Update the song current time based on progress bar change
+  durationBar.addEventListener('change', () => {
+    audio.currentTime = (durationBar.value / 100) * songDuration;
+  });
+
+  // check if current song ended
+  audio.addEventListener('ended', () => {
+    nextSong();
+    setMasterPlay();
+  });
 }
 
 // function to pause the music
@@ -261,15 +290,13 @@ function pauseMusic() {
   playBtn.classList.add('fa-play');
 }
 
-
-//function to play clicked song 
+//function to play a clicked song
 function songPlay() {
-  if (audio.paused) {
-    audio = new Audio(songList[currentSongIndex].audioPath);
-    playMusic();
+  if (audio.paused || audio.currentTime < 0) {
+    initializeAudio();
   } else {
     pauseMusic();
-    audio = new Audio(songList[currentSongIndex].audioPath);
+    initializeAudio();
     playMusic();
   }
 }
@@ -286,7 +313,7 @@ function setMasterPlay() {
   songPlay();
 }
 
-// Play song by clicking on each song item
+// Listening to click on song item
 const songItems = document.querySelectorAll('.song-item');
 
 songItems.forEach((songItem) => {
@@ -296,14 +323,10 @@ songItems.forEach((songItem) => {
       masterPlayBox.classList.remove('hide');
       first = false;
     }
-
     currentSongIndex = e.currentTarget.id;
     setMasterPlay();
-    console.log(currentSongIndex);
-    console.log('song item clicked');
   });
 });
-
 
 // Fast forward & backward
 const prevSongBtn = document.querySelector('.backward-step');
@@ -313,11 +336,9 @@ const nextSongBtn = document.querySelector('.forward-step');
 prevSongBtn.addEventListener('click', () => {
   if (currentSongIndex == 0) {
     currentSongIndex = 7;
-  }
-  else if (currentSongIndex == 8) {
+  } else if (currentSongIndex == 8) {
     currentSongIndex = 15;
-  }
-  else if (currentSongIndex == 16) {
+  } else if (currentSongIndex == 16) {
     currentSongIndex = 23;
   } else {
     currentSongIndex--;
@@ -325,18 +346,22 @@ prevSongBtn.addEventListener('click', () => {
   setMasterPlay();
 });
 
-//To move to Next song
-nextSongBtn.addEventListener('click', () => {
+// Next song function
+
+function nextSong() {
   if (currentSongIndex == 7) {
     currentSongIndex = 0;
-  }
-  else if (currentSongIndex == 15) {
+  } else if (currentSongIndex == 15) {
     currentSongIndex = 8;
-  }
-  else if (currentSongIndex == 23) {
+  } else if (currentSongIndex == 23) {
     currentSongIndex = 16;
   } else {
     currentSongIndex++;
   }
+}
+
+//To move to Next song
+nextSongBtn.addEventListener('click', () => {
+  nextSong();
   setMasterPlay();
 });

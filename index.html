@@ -9,9 +9,11 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/logo/spotify.png" type="image/x-icon" />
   </head>
   <body>
     <div class="container">
+      <!-- Sidebar -->
       <div class="sidebar">
         <div class="logo">
           <a href="#">
@@ -23,7 +25,7 @@
         <div class="menu">
           <ul>
             <li>
-              <a href="index.html">
+              <a id="home" href="#" active>
                 <span class="fa fa-home"></span>
                 <span class="menu-title">Home</span>
               </a>
@@ -69,21 +71,40 @@
             </li>
           </ul>
         </div>
-
+        <!-- Master play tab -->
         <div class="master-play hide">
           <div class="play-song-box">
-            <img id="play-song-img" src="img/kabira.jpg">
+            <img id="play-song-img" src="img/kabira.jpg" />
             <h5 id="play-song-name">Kabira</h5>
           </div>
-          <div class="play-box">
-            <span class="fa-solid fa-backward-step backward-step" style="color: #ffffff;"></span>
-            <span class="fa-solid fa-play play" style="color: #ffffff;"></span>
-            <span class=" fa-solid fa-forward-step forward-step" style="color: #ffffff;"></span>
+          <div class="song-control-box">
+            <div class="seek-box">
+              <input
+                type="range"
+                name="range"
+                id="duration-bar"
+                value="0"
+                min="0"
+                max="100"
+              />
+            </div>
+            <div class="play-btn-box">
+              <span
+                class="fa-solid fa-backward-step backward-step"
+                style="color: #ffffff"
+              ></span>
+              <span class="fa-solid fa-play play" style="color: #ffffff"></span>
+              <span
+                class="fa-solid fa-forward-step forward-step"
+                style="color: #ffffff"
+              ></span>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="main">
+        <!-- Navbar -->
         <div class="navbar">
           <div class="navigation-btns">
             <button
@@ -107,7 +128,7 @@
             </ul>
           </div>
         </div>
-
+        <!-- albums -->
         <div class="albums">
           <!-- Album 1-->
           <div class="songs-album album-1">
@@ -153,7 +174,7 @@
           <!-- Album 3-->
           <div class="songs-album album-3">
             <div class="album-header">
-              <h4>All Out 00's Hindi</h4>
+              <h4>Bollywood Sundowner</h4>
               <div class="see-all-btns">
                 <span
                   class="fa fa-arrow-left left-arrow"
@@ -171,9 +192,6 @@
           </div>
         </div>
       </div>
-
-      
-
 
       <div class="preview-bar">
         <div class="text">
