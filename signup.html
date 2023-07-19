@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up - Spotify</title>
+    <link rel="shortcut icon" href="img/logo/spotify.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/82c581feec.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="sign-container">
+      <div class="sign-navbar">
+        <a href="index.html">
+          <img class="sign-logo" src="img/logo/spotify.png" alt="" />
+          <span>Spotify</span>
+        </a>
+      </div>
+      <div class="sign-box">
+        <h1 class="sign-header">Sign up for free to start listening.</h1>
+        <div class="social-app">
+          <ul>
+            <li>
+              <button type="button" class="sign-btns sign-fb">
+                <span><img src="img/logo/facebook.png" alt="facebook logo" /></span>
+                <span>Sign up with Facebook</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="sign-btns">
+                <span><img src="img/logo/google.png" alt="google logo" /></span>
+                <span>Sign up with Google</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sign-divider">
+        <hr />
+        <span>or</span>
+        <hr />
+      </div>
+      <div class="sign-form">
+        <form action="">
+          <ul>
+            <li>
+              <label for="email">What's your email?</label>
+              <input id="email" type="text" placeholder="Enter your email." />
+              <a id="email-tooltip">Use phone number instead</a>
+            </li>
+            <li>
+              <label for="password">Create a password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Create a password."
+              />
+            </li>
+            <li>
+              <label for="profileName">What should we call you?</label>
+              <input
+                type="text"
+                id="profileName"
+                placeholder="Enter a profile name."
+              />
+              <p id="profile-tooltip">This appears on your profile</p>
+            </li>
+            <li>
+              <label>Whats your date of birth?</label>
+              <div class="dob">
+                <div class="year">
+                  <label for="year">Year</label>
+                  <input type="number" placeholder="YYYY" />
+                </div>
+                <div class="month">
+                  <label for="month">Month</label>
+                  <select id="month">
+                    <option value="1">Janaury</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+                <div class="day">
+                  <label for="day">Day</label>
+                  <input type="number" placeholder="DD" min="1" max="31" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <label for="gender">What's your gender?</label>
+              <div class="gender">
+                <label class="gender-units"
+                  ><input type="radio" name="gender" value="male" /><span
+                    >Male</span
+                  ></label
+                >
+                <label class="gender-units"
+                  ><input type="radio" name="gender" value="female" /><span
+                    >Female</span
+                  ></label
+                >
+                <label class="gender-units"
+                  ><input type="radio" name="gender" value="others" /><span
+                    >Others</span
+                  ></label
+                >
+              </div>
+            </li>
+            <li class="signup-btn-box">
+              <button class="signup-btn">Sign Up</button>
+            </li>
+            <li class="signup-footer-link">
+              <p>Have an account?<a href="login.html">Log in</a></p>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
